@@ -1,6 +1,6 @@
-const express = require("express");
+import express from 'express';
 const router = express.Router();
-const PhoneTopup = require("../controllers/phoneTopupController");
+import PhoneTopup from "../controllers/phoneTopupController.js";
 
 
 // Bảo vệ bằng JWT
@@ -10,4 +10,4 @@ router.post("/phonetopup", PhoneTopup.createTopup);
 router.put("/phonetopup/:id", PhoneTopup.updateTopup);
 router.delete("/phonetopup/:id", PhoneTopup.deleteTopup);
 
-module.exports = router;
+export default router;

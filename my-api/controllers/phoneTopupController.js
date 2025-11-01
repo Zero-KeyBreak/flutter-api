@@ -1,6 +1,6 @@
-const PhoneTopup = require("../models/phoneTopupModel");
+import PhoneTopup from "../models/phoneTopupModel.js";
 
-exports.getAllTopups = async (req, res) => {
+const getAllTopups = async (req, res) => {
   try {
     await PhoneTopup.getAll(req, res);
   } catch (error) {
@@ -8,7 +8,7 @@ exports.getAllTopups = async (req, res) => {
   }
 };
 
-exports.getTopupById = async (req, res) => {
+const getTopupById = async (req, res) => {
   try {
     await PhoneTopup.getById(req, res);
   } catch (error) {
@@ -16,7 +16,7 @@ exports.getTopupById = async (req, res) => {
   }
 };
 
-exports.createTopup = async (req, res) => {
+const createTopup = async (req, res) => {
   try {
     await PhoneTopup.create(req, res);
   } catch (error) {
@@ -24,7 +24,7 @@ exports.createTopup = async (req, res) => {
   }
 };
 
-exports.updateTopup = async (req, res) => {
+const updateTopup = async (req, res) => {
   try {
     await PhoneTopup.update(req, res);
   } catch (error) {
@@ -32,10 +32,18 @@ exports.updateTopup = async (req, res) => {
   }
 };
 
-exports.deleteTopup = async (req, res) => {
+const deleteTopup = async (req, res) => {
   try {
     await PhoneTopup.delete(req, res);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
+};
+
+export default {
+  getAllTopups,
+  getTopupById,
+  createTopup,
+  updateTopup,
+  deleteTopup,
 };

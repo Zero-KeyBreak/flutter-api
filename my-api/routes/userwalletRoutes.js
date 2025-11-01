@@ -1,6 +1,6 @@
-const express = require("express");
+import express from 'express';
 const router = express.Router();
-const UserWalletController = require("../controllers/userwalletController");
+import UserWalletController from "../controllers/userwalletController.js";
 
 
 router.get("/userwallet",UserWalletController.getAllUserWallets);
@@ -9,4 +9,4 @@ router.post("/userwallet", UserWalletController.createUserWallet);
 router.put("/userwallet/:id", UserWalletController.updateUserWallet);
 router.delete("/userwallet/:id",UserWalletController.deleteUserWallet);
 
-module.exports = router;
+export default router;

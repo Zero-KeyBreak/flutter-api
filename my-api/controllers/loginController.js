@@ -1,9 +1,13 @@
-const Login = require("../models/loginModel");
+import Login from '../models/loginModel.js';
 
-exports.loginUser = async (req,res) => {
+const loginUser = async (req,res) => {
   try {
    await Login.loginUsers(req,res);
   } catch (error) {
     return res.status(500).json({message: error.message})
   }
+}
+
+export default {
+  loginUser
 }

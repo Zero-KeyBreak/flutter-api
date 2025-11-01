@@ -1,41 +1,53 @@
-const User = require("../models/userModel");
 
-exports.getUsers = async (req, res) => {
+import User from '../models/userModel.js'; 
+
+
+const getUsers = async (req, res) => {
   try {
-    await User.getUser(req, res);
+   
+    await User.getUser(req, res); 
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
 };
 
-exports.getUsersById = async (req, res) => {
+const getUsersById = async (req, res) => {
   try {
-    await User.getById(req, res);
+    await User.getById(req, res); 
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
 };
 
-exports.postUsers = async (req, res) => {
+const postUsers = async (req, res) => {
   try {
-    await User.postUser(req, res);
+    await User.postUser(req, res); 
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
 };
 
-exports.updateUsers = async (req, res) => {
+const updateUsers = async (req, res) => {
   try {
-    await User.updateUser(req, res);
+    await User.updateUser(req, res); 
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
 };
 
-exports.deleteUsers = async (req, res) => {
+const deleteUsers = async (req, res) => {
   try {
     await User.deleteUser(req, res);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
+};
+
+
+export default {
+  getUsers,
+  getUsersById,
+  postUsers,
+  updateUsers,
+  deleteUsers,
 };

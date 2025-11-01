@@ -1,4 +1,4 @@
-const pool = require("../config/db");
+import pool from "../config/db.js";
 
 const EWallet = {
   // ✅ Lấy tất cả ví điện tử
@@ -102,4 +102,4 @@ const EWallet = {
   },
 };
 
-module.exports = EWallet;
+export default EWallet;

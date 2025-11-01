@@ -1,6 +1,6 @@
-const Transaction = require("../models/transactionModel");
+import Transaction from "../models/transactionModel.js";
 
-exports.getTransactions = async (req, res) => {
+const getTransactions = async (req, res) => {
   try {
     await Transaction.getAll(req, res);
   } catch (error) {
@@ -8,7 +8,7 @@ exports.getTransactions = async (req, res) => {
   }
 };
 
-exports.getTransactionById = async (req, res) => {
+const getTransactionById = async (req, res) => {
   try {
     await Transaction.getById(req, res);
   } catch (error) {
@@ -16,7 +16,7 @@ exports.getTransactionById = async (req, res) => {
   }
 };
 
-exports.postTransaction = async (req, res) => {
+const postTransaction = async (req, res) => {
   try {
     await Transaction.create(req, res);
   } catch (error) {
@@ -24,7 +24,7 @@ exports.postTransaction = async (req, res) => {
   }
 };
 
-exports.updateTransaction = async (req, res) => {
+const updateTransaction = async (req, res) => {
   try {
     await Transaction.update(req, res);
   } catch (error) {
@@ -32,10 +32,19 @@ exports.updateTransaction = async (req, res) => {
   }
 };
 
-exports.deleteTransaction = async (req, res) => {
+const deleteTransaction = async (req, res) => {
   try {
     await Transaction.delete(req, res);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
 };
+
+export default {
+   getTransactionById,
+   getTransactions,
+   postTransaction,
+   updateTransaction,
+   deleteTransaction
+
+}

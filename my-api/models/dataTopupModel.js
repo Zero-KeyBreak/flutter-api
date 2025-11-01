@@ -1,4 +1,4 @@
-const pool = require("../config/db");
+import pool from "../config/db.js";
 
 const DataTopup = {
   // ✅ Lấy tất cả gói data đã nạp
@@ -119,7 +119,7 @@ const DataTopup = {
 
       return res.status(200).json({ message: "Data topup updated successfully" });
     } catch (error) {
-      console.error("Error updating data topup:", error);
+     
       return res.status(500).json({ message: error.message });
     }
   },
@@ -139,10 +139,10 @@ const DataTopup = {
 
       return res.status(200).json({ message: "Data topup deleted successfully" });
     } catch (error) {
-      console.error("Error deleting data topup:", error);
+    
       return res.status(500).json({ message: error.message });
     }
   },
 };
 
-module.exports = DataTopup;
+export default DataTopup;

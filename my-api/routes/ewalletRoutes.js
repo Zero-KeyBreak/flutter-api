@@ -1,6 +1,6 @@
-const express = require("express");
+import express from 'express';
 const router = express.Router();
-const EWalletController = require("../controllers/ewalletController");
+import EWalletController from '../controllers/ewalletController.js';
 
 
 router.get("/ewallet",EWalletController.getAllEWallets);
@@ -9,4 +9,4 @@ router.post("/ewallet", EWalletController.createEWallet);
 router.put("/ewallet/:id", EWalletController.updateEWallet);
 router.delete("/ewallet/:id", EWalletController.deleteEWallet);
 
-module.exports = router;
+export default router;

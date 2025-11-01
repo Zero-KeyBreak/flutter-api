@@ -1,6 +1,6 @@
-const Card = require("../models/cardModel");
+import Card from '../models/cardModel.js';
 
-exports.getCards = async (req,res) =>{
+const getCards = async (req,res) =>{
     try {
         await Card.getCard(req,res);
     } catch (error) {
@@ -8,7 +8,7 @@ exports.getCards = async (req,res) =>{
     }
 };
 
-exports.getCardsById = async (req,res) => {
+const getCardsById = async (req,res) => {
     try {
       await Card.getCardById(req,res);  
     } catch (error) {
@@ -16,7 +16,7 @@ exports.getCardsById = async (req,res) => {
     }
 };
 
-exports.createCards = async (req,res) => {
+const createCards = async (req,res) => {
     try {
         await Card.createCard(req,res);
     } catch (error) {
@@ -24,7 +24,7 @@ exports.createCards = async (req,res) => {
     }
 };
 
-exports.updateCards = async (req,res) => {
+const updateCards = async (req,res) => {
     try {
         await Card.updateCard(req,res);
     } catch (error) {
@@ -32,10 +32,18 @@ exports.updateCards = async (req,res) => {
     }
 };
 
-exports.deleteCards = async (req,res) => {
+const deleteCards = async (req,res) => {
     try {
         await Card.deleteCard(req,res);
     } catch (error) {
           return res.status(500).json({message: error.message});
     }
+}
+
+export default {
+    getCards,
+    getCardsById,
+    createCards,
+    updateCards,
+    deleteCards
 }
