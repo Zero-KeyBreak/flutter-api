@@ -1,6 +1,6 @@
-const express = require("express");
+import express from 'express';
 const router = express.Router();
-const DataTopup = require("../controllers/dataTopupController");
+import DataTopup from '../controllers/dataTopupController.js';
 
 
 router.get("/datatopup", DataTopup.getAllDataTopups);
@@ -9,4 +9,4 @@ router.post("/datatopup", DataTopup.createDataTopup);
 router.put("/datatopup/:id", DataTopup.updateDataTopup);
 router.delete("/datatopup/:id", DataTopup.deleteDataTopup);
 
-module.exports = router;
+export default router;

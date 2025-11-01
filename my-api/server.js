@@ -1,19 +1,19 @@
-require('dotenv').config();
-const express = require('express');
+import dotenv from 'dotenv';
+import express from 'express';
+dotenv.config({path: "C:\Users\Sang\Desktop\BackEndAPI\my-api\.env"});
+import cors from 'cors';
+import helmet from 'helmet';
+import pool from './config/db.js';
+import userRoutes from './routes/userRoutes.js';
+import loginRoutes from './routes/loginRoutes.js';
+import cardRoutes from './routes/cardRoutes.js';
+import transactionRoutes from './routes/transactionRoutes.js';
+import phoneTopupRoutes from './routes/phoneTopupRoutes.js';
+import dataTopupRoutes from './routes/dataTopupRoutes.js';
+import userWalletRoutes from './routes/userwalletRoutes.js';
+import eWalletRoutes from './routes/ewalletRoutes.js';
 
-const mysql = require('mysql2/promise');
-const cookieParser = require('cookie-parser');
-const cors = require('cors');
-const helmet = require('helmet');
-const pool = require("./config/db");
-const userRoutes = require("./routes/userRoutes");
-const loginRoutes = require("./routes/loginRoutes");
-const cardRoutes = require("./routes/cardRoutes");
-const transactionRoutes = require("./routes/transactionRoutes");
-const phoneTopupRoutes = require("./routes/phoneTopupRoutes");
-const dataTopupRoutes = require("./routes/dataTopupRoutes");
-const userWalletRoutes  = require("./routes/userwalletRoutes");
-const eWalletRoutes  = require("./routes/ewalletRoutes");
+
 
 const app = express();
 app.use(express.json());

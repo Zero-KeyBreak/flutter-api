@@ -1,6 +1,6 @@
-const UserWallet = require("../models/userwalletModel");
+import UserWallet from '../models/userwalletModel.js';
 
-exports.getAllUserWallets = async (req, res) => {
+const getAllUserWallets = async (req, res) => {
   try {
     await UserWallet.getAll(req, res);
   } catch (error) {
@@ -8,7 +8,7 @@ exports.getAllUserWallets = async (req, res) => {
   }
 };
 
-exports.getUserWalletById = async (req, res) => {
+const getUserWalletById = async (req, res) => {
   try {
     await UserWallet.getById(req, res);
   } catch (error) {
@@ -16,7 +16,7 @@ exports.getUserWalletById = async (req, res) => {
   }
 };
 
-exports.createUserWallet = async (req, res) => {
+const createUserWallet = async (req, res) => {
   try {
     await UserWallet.create(req, res);
   } catch (error) {
@@ -24,7 +24,7 @@ exports.createUserWallet = async (req, res) => {
   }
 };
 
-exports.updateUserWallet = async (req, res) => {
+const updateUserWallet = async (req, res) => {
   try {
     await UserWallet.update(req, res);
   } catch (error) {
@@ -32,10 +32,18 @@ exports.updateUserWallet = async (req, res) => {
   }
 };
 
-exports.deleteUserWallet = async (req, res) => {
+const deleteUserWallet = async (req, res) => {
   try {
     await UserWallet.delete(req, res);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
 };
+
+export default {
+  getAllUserWallets,
+  getUserWalletById,
+  createUserWallet,
+  updateUserWallet,
+  deleteUserWallet,
+}

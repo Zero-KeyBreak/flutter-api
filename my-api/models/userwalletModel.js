@@ -1,4 +1,4 @@
-const pool = require("../config/db");
+import pool from "../config/db.js";
 
 const UserWallet = {
   // ✅ Lấy tất cả liên kết ví
@@ -129,4 +129,4 @@ const UserWallet = {
   },
 };
 
-module.exports = UserWallet;
+export default UserWallet;

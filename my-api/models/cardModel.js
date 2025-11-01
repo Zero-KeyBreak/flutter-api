@@ -1,4 +1,4 @@
-const pool = require("../config/db");
+import pool from "../config/db.js";
 
 const Card = {
  getCard: async (req, res) => {
@@ -88,4 +88,4 @@ const Card = {
   },
 };
 
-module.exports = Card;
+export default Card;

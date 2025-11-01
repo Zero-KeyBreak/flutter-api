@@ -1,6 +1,6 @@
-const EWallet = require("../models/ewalletModel");
+import EWallet from '../models/ewalletModel.js';
 
-exports.getAllEWallets = async (req, res) => {
+const getAllEWallets = async (req, res) => {
   try {
     await EWallet.getAll(req, res);
   } catch (error) {
@@ -8,7 +8,7 @@ exports.getAllEWallets = async (req, res) => {
   }
 };
 
-exports.getEWalletById = async (req, res) => {
+const getEWalletById = async (req, res) => {
   try {
     await EWallet.getById(req, res);
   } catch (error) {
@@ -16,7 +16,7 @@ exports.getEWalletById = async (req, res) => {
   }
 };
 
-exports.createEWallet = async (req, res) => {
+const createEWallet = async (req, res) => {
   try {
     await EWallet.create(req, res);
   } catch (error) {
@@ -24,7 +24,7 @@ exports.createEWallet = async (req, res) => {
   }
 };
 
-exports.updateEWallet = async (req, res) => {
+const updateEWallet = async (req, res) => {
   try {
     await EWallet.update(req, res);
   } catch (error) {
@@ -32,10 +32,18 @@ exports.updateEWallet = async (req, res) => {
   }
 };
 
-exports.deleteEWallet = async (req, res) => {
+const deleteEWallet = async (req, res) => {
   try {
     await EWallet.delete(req, res);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
 };
+
+export default  {
+  getAllEWallets,
+  getEWalletById,
+  createEWallet,
+  updateEWallet,
+  deleteEWallet,
+}

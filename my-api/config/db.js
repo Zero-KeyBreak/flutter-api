@@ -1,14 +1,14 @@
-const mysql = require("mysql2/promise");
+import mysql from 'mysql2/promise'
 
 const pool = mysql.createPool({
-  port: process.env.DB_PORT,
-  host: process.env.DB_HOST,     // ví dụ: 'localhost'
-  user: process.env.DB_USER,     // ví dụ: 'root'
-  password: process.env.DB_PASS, // ví dụ: ''
-  database: process.env.DB_NAME, // ví dụ: 'DatMonAn'
+port: process.env.DB_PORT, 
+host: process.env.DB_HOST,
+user: process.env.DB_USER,
+password: process.env.DB_PASSWORD, 
+database: process.env.DB_NAME,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
 });
 
-module.exports = pool;
+export default pool;

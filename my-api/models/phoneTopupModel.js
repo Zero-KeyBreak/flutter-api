@@ -1,4 +1,4 @@
-const pool = require("../config/db");
+import pool from "../config/db.js";
 
 const PhoneTopup = {
   // ✅ Lấy tất cả giao dịch nạp điện thoại
@@ -127,4 +127,4 @@ const PhoneTopup = {
   },
 };
 
-module.exports = PhoneTopup;
+export default PhoneTopup;

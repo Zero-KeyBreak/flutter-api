@@ -1,6 +1,6 @@
-const DataTopup = require("../models/dataTopupModel");
+import DataTopup from "../models/dataTopupModel.js";
 
-exports.getAllDataTopups = async (req, res) => {
+const getAllDataTopups = async (req, res) => {
   try {
     await DataTopup.getAll(req, res);
   } catch (error) {
@@ -8,7 +8,7 @@ exports.getAllDataTopups = async (req, res) => {
   }
 };
 
-exports.getDataTopupById = async (req, res) => {
+const getDataTopupById = async (req, res) => {
   try {
     await DataTopup.getById(req, res);
   } catch (error) {
@@ -16,7 +16,7 @@ exports.getDataTopupById = async (req, res) => {
   }
 };
 
-exports.createDataTopup = async (req, res) => {
+const createDataTopup = async (req, res) => {
   try {
     await DataTopup.create(req, res);
   } catch (error) {
@@ -24,7 +24,7 @@ exports.createDataTopup = async (req, res) => {
   }
 };
 
-exports.updateDataTopup = async (req, res) => {
+const updateDataTopup = async (req, res) => {
   try {
     await DataTopup.update(req, res);
   } catch (error) {
@@ -32,10 +32,18 @@ exports.updateDataTopup = async (req, res) => {
   }
 };
 
-exports.deleteDataTopup = async (req, res) => {
+const deleteDataTopup = async (req, res) => {
   try {
     await DataTopup.delete(req, res);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
 };
+
+export default {
+  getAllDataTopups,
+  getDataTopupById,
+  createDataTopup,
+  updateDataTopup,
+  deleteDataTopup,
+}

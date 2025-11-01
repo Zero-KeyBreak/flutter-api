@@ -1,4 +1,4 @@
-const pool = require("../config/db");
+import pool from "../config/db.js";
 
 const Transaction = {
   // ✅ Lấy tất cả giao dịch
@@ -15,7 +15,7 @@ const Transaction = {
       `);
       return res.status(200).json(rows);
     } catch (error) {
-      console.error("Error fetching transactions:", error);
+     
       return res.status(500).json({ message: error.message });
     }
   },
@@ -33,7 +33,7 @@ const Transaction = {
       }
       return res.status(200).json(rows[0]);
     } catch (error) {
-      console.error("Error fetching transaction:", error);
+     
       return res.status(500).json({ message: error.message });
     }
   },
@@ -96,7 +96,7 @@ const Transaction = {
         transaction_id: result.insertId,
       });
     } catch (error) {
-      console.error("Error creating transaction:", error);
+      
       return res.status(500).json({ message: error.message });
     }
   },
@@ -124,7 +124,7 @@ const Transaction = {
 
       return res.status(200).json({ message: "Transaction updated successfully" });
     } catch (error) {
-      console.error("Error updating transaction:", error);
+     
       return res.status(500).json({ message: error.message });
     }
   },
@@ -142,10 +142,10 @@ const Transaction = {
       }
       return res.status(200).json({ message: "Transaction deleted successfully" });
     } catch (error) {
-      console.error("Error deleting transaction:", error);
+     
       return res.status(500).json({ message: error.message });
     }
   },
 };
 
-module.exports = Transaction;
+export default Transaction;

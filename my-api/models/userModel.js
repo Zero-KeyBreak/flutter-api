@@ -1,5 +1,6 @@
-const pool = require("../config/db");
-const bcrypt = require("bcrypt");
+import pool from "../config/db.js";
+import bcrypt from 'bcrypt';
+
 
 const User = {
   // ✅ Lấy toàn bộ user
@@ -104,4 +105,4 @@ const User = {
   },
 };
 
-module.exports = User;
+export default User;
